@@ -33,6 +33,7 @@ namespace API21
             services.ConfigureCors();
             services.ConfigureIISIntegration();
             services.ConfigureLoggerManager();
+            services.ConfigureSqlService(Configuration);
             services.AddControllers();
         }
 

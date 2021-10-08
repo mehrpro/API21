@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Entities.Configuration;
+using Microsoft.EntityFrameworkCore;
 
 
 
@@ -19,6 +20,8 @@ namespace Entities.Models
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            modelBuilder.ApplyConfiguration(new CompanyConfiguration());
+            modelBuilder.ApplyConfiguration(new EmployeeConfiguration());
 
             modelBuilder.Entity<Employee>(opts =>
             {
